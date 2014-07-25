@@ -21,6 +21,16 @@
 		846148F91973F8EE005B85DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846148DB1973F8EE005B85DF /* UIKit.framework */; };
 		846149011973F8EE005B85DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 846148FF1973F8EE005B85DF /* InfoPlist.strings */; };
 		846149031973F8EE005B85DF /* Ping_PongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846149021973F8EE005B85DF /* Ping_PongTests.m */; };
+		846149171973F927005B85DF /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461490D1973F927005B85DF /* ball.png */; };
+		846149181973F927005B85DF /* ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461490E1973F927005B85DF /* ball@2x.png */; };
+		846149191973F927005B85DF /* court.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461490F1973F927005B85DF /* court.png */; };
+		8461491A1973F927005B85DF /* court@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149101973F927005B85DF /* court@2x.png */; };
+		8461491B1973F927005B85DF /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149111973F927005B85DF /* newgame.png */; };
+		8461491C1973F927005B85DF /* newgame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149121973F927005B85DF /* newgame@2x.png */; };
+		8461491D1973F927005B85DF /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149131973F927005B85DF /* red.png */; };
+		8461491E1973F927005B85DF /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149141973F927005B85DF /* red@2x.png */; };
+		8461491F1973F927005B85DF /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149151973F927005B85DF /* yellow.png */; };
+		846149201973F927005B85DF /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846149161973F927005B85DF /* yellow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,16 @@
 		846148FE1973F8EE005B85DF /* Ping PongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ping PongTests-Info.plist"; sourceTree = "<group>"; };
 		846149001973F8EE005B85DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		846149021973F8EE005B85DF /* Ping_PongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ping_PongTests.m; sourceTree = "<group>"; };
+		8461490D1973F927005B85DF /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		8461490E1973F927005B85DF /* ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball@2x.png"; sourceTree = "<group>"; };
+		8461490F1973F927005B85DF /* court.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = court.png; sourceTree = "<group>"; };
+		846149101973F927005B85DF /* court@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "court@2x.png"; sourceTree = "<group>"; };
+		846149111973F927005B85DF /* newgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame.png; sourceTree = "<group>"; };
+		846149121973F927005B85DF /* newgame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newgame@2x.png"; sourceTree = "<group>"; };
+		846149131973F927005B85DF /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		846149141973F927005B85DF /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red@2x.png"; sourceTree = "<group>"; };
+		846149151973F927005B85DF /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		846149161973F927005B85DF /* yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +138,7 @@
 				846148EC1973F8EE005B85DF /* YKViewController.h */,
 				846148ED1973F8EE005B85DF /* YKViewController.m */,
 				846148EF1973F8EE005B85DF /* Images.xcassets */,
+				8461490C1973F927005B85DF /* images */,
 				846148DE1973F8EE005B85DF /* Supporting Files */,
 			);
 			path = "Ping Pong";
@@ -150,6 +171,23 @@
 				846148FF1973F8EE005B85DF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8461490C1973F927005B85DF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8461490D1973F927005B85DF /* ball.png */,
+				8461490E1973F927005B85DF /* ball@2x.png */,
+				8461490F1973F927005B85DF /* court.png */,
+				846149101973F927005B85DF /* court@2x.png */,
+				846149111973F927005B85DF /* newgame.png */,
+				846149121973F927005B85DF /* newgame@2x.png */,
+				846149131973F927005B85DF /* red.png */,
+				846149141973F927005B85DF /* red@2x.png */,
+				846149151973F927005B85DF /* yellow.png */,
+				846149161973F927005B85DF /* yellow@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +267,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8461491C1973F927005B85DF /* newgame@2x.png in Resources */,
+				846149201973F927005B85DF /* yellow@2x.png in Resources */,
+				8461491F1973F927005B85DF /* yellow.png in Resources */,
 				846148F01973F8EE005B85DF /* Images.xcassets in Resources */,
 				846148E21973F8EE005B85DF /* InfoPlist.strings in Resources */,
+				8461491D1973F927005B85DF /* red.png in Resources */,
+				8461491B1973F927005B85DF /* newgame.png in Resources */,
+				846149181973F927005B85DF /* ball@2x.png in Resources */,
+				8461491E1973F927005B85DF /* red@2x.png in Resources */,
+				8461491A1973F927005B85DF /* court@2x.png in Resources */,
+				846149191973F927005B85DF /* court.png in Resources */,
+				846149171973F927005B85DF /* ball.png in Resources */,
 				846148EB1973F8EE005B85DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +505,7 @@
 				846149081973F8EE005B85DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846149091973F8EE005B85DF /* Build configuration list for PBXNativeTarget "Ping PongTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +514,7 @@
 				8461490B1973F8EE005B85DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,4 +10,15 @@
 
 @interface YKViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *redBoard;
+@property (weak, nonatomic) IBOutlet UIImageView *yellowBoard;
+@property (weak, nonatomic) IBOutlet UIImageView *ball;
+@property (weak, nonatomic) IBOutlet UIButton *imageNewGame;
+@property (weak, nonatomic) IBOutlet UILabel *yellowScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *redScoreLabel;
+
+
+- (IBAction)beginGame:(id)sender;
+- (IBAction)dragBoard:(UIPanGestureRecognizer *)sender;
+
 @end
