@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageNewGame;
 @property (weak, nonatomic) IBOutlet UILabel *yellowScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *redScoreLabel;
-
+@property (weak, nonatomic) IBOutlet UIButton *crazyMode;
 
 - (IBAction)beginGame:(id)sender;
 - (IBAction)dragBoard:(UIPanGestureRecognizer *)sender;

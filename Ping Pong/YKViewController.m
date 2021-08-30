@@ -33,6 +33,7 @@
     speedGrowth = -2;
     yellowScore = 0;
     redScore = 0;
+    [self.crazyMode addTarget:self action:@selector(toggleCrazyMode:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +53,12 @@
     gameLoopTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(gameLoop) userInfo:nil repeats:YES];
 }
 
+- (void)toggleCrazyMode:(id)sender
+{
+    NSString *title = [self.crazyMode titleForState:UIControlStateNormal];
+    [self.crazyMode setTitle: [title isEqual:@"crazy mode: on"] ? @"crazy mode: off" : @"crazy mode: on" forState:UIControlStateNormal];
+}
+
 - (void)gameLoop
 {
     CGFloat ballPositionX = self.ball.center.x;
@@ -64,12 +71,12 @@
     [self ballReboundsOffSide:ballPositionX];
     
     if ([self ballIntersectsBoard:self.redBoard]) {
-        yAxisBallSpeed = fabsf(yAxisBallSpeed);
+        yAxisBallSpeed = fabs(yAxisBallSpeed);
         [self reboundBoard:self.redBoard];
     }
     
     if ([self ballIntersectsBoard:self.yellowBoard]) {
-        yAxisBallSpeed = -fabsf(yAxisBallSpeed);
+        yAxisBallSpeed = -fabs(yAxisBallSpeed);
         
         // add horizontal force to the ball when player hits it
         xAxisBallSpeed += draggingSpeed;
@@ -81,7 +88,7 @@
     [self moveBallWithX:ballPositionX y:ballPositionY];
     
     if (ballPositionY < [UIScreen mainScreen].bounds.size.height * 0.6 && yAxisBallSpeed < 0) {
-        if (fabsf(self.redBoard.center.x - self.ball.center.x) > GAMESPEED) {
+        if (fabs(self.redBoard.center.x - self.ball.center.x) > GAMESPEED) {
             [self AIMoveRedBoard];
         }
         else {
@@ -100,10 +107,10 @@
     speedGrowth += 0.5;
     
     if (redBoardX > self.ball.center.x) {
-        redBoardX -= fabsf(xAxisBallSpeed) / 2 + speedGrowth;
+        redBoardX -= fabs(xAxisBallSpeed) / 2 + speedGrowth;
     }
     else {
-        redBoardX += fabsf(xAxisBallSpeed) / 2 + speedGrowth;
+        redBoardX += fabs(xAxisBallSpeed) / 2 + speedGrowth;
     }
     
     self.redBoard.center = CGPointMake(redBoardX, self.redBoard.center.y);
@@ -120,7 +127,11 @@
     draggingSpeed = translation.x / 2;
     [sender setTranslation: CGPointZero inView: self.view];
 
-//    [self makeBallCrazy];
+    NSString *title = [self.crazyMode titleForState:UIControlStateNormal];
+    
+    if ([title isEqual:@"crazy mode: on"]) {
+        [self makeBallCrazy];
+    }
 }
 
 -(void)makeBallCrazy
@@ -149,10 +160,10 @@
 {
     [UIView animateWithDuration:0.05 animations:^{
         board.center = CGPointMake(board.center.x,
-                                   board.center.y - 5 * fabsf(yAxisBallSpeed) / yAxisBallSpeed);
+                                   board.center.y - 5 * fabs(self->yAxisBallSpeed) / self->yAxisBallSpeed);
     } completion:^(BOOL finished) {
         board.center = CGPointMake(board.center.x,
-                                   board.center.y + 5 * fabsf(yAxisBallSpeed) / yAxisBallSpeed);
+                                   board.center.y + 5 * fabs(self->yAxisBallSpeed) / self->yAxisBallSpeed);
     }];
 }
 
@@ -181,12 +192,12 @@
 - (BOOL)ballReboundsOffSide:(CGFloat)ballX
 {
     if (ballX < 12) {
-        xAxisBallSpeed = fabsf(xAxisBallSpeed) + PLUS_MINUS_ONE;
+        xAxisBallSpeed = fabs(xAxisBallSpeed) + PLUS_MINUS_ONE;
         return YES;
     }
     
     if (ballX > 308) {
-        xAxisBallSpeed = -fabsf(xAxisBallSpeed) + PLUS_MINUS_ONE;
+        xAxisBallSpeed = -fabs(xAxisBallSpeed) + PLUS_MINUS_ONE;
         return YES;
     }
     
@@ -197,14 +208,14 @@
 {
     if (ballY < -10) {
         yellowScore++;
-        self.yellowScoreLabel.text = [NSString stringWithFormat:@"%d", yellowScore];
+        self.yellowScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)yellowScore];
         [self gameOver];
         return YES;
     }
     
     if (ballY > 578) {
         redScore++;
-        self.redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
+        self.redScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)redScore];
         [self gameOver];
         return YES;
     }
